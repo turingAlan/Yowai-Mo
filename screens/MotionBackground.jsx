@@ -32,9 +32,9 @@ export default function MotionBackground({ children }) {
       top: interpolate(pitch, [-HALF_PI, HALF_PI], [-IMAGE_OFFSET, 0], {
         // we use interpolate to map the value of pitch from -PI/2 to PI/2 to -IMAGE_OFFSET to 0 giving the mapped top value
 
-        interval: 100, // interval is the time in ms after which the value is updated that it doesn't glitch out on the edges
+        interval: 200, // interval is the time in ms after which the value is updated that it doesn't glitch out on the edges
       }),
-      left: interpolate(roll, [-PI, PI], [-IMAGE_OFFSET, 0], { interval: 100 }), // these value of roll and pitch are in radians and hence varies form -PI/2 to PI/2 or PI to PI
+      left: interpolate(roll, [-PI, PI], [-IMAGE_OFFSET, 0], { interval: 200 }), // these value of roll and pitch are in radians and hence varies form -PI/2 to PI/2 or PI to PI
     };
   });
   return (
@@ -49,7 +49,7 @@ export default function MotionBackground({ children }) {
           },
           imageStyle,
         ]}
-        blurRadius={3}
+        blurRadius={5}
       />
       {children}
     </View>

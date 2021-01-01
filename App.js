@@ -4,13 +4,14 @@ import { useFonts } from "expo-font";
 import Splash from "./screens/Splash";
 import { useState } from "react";
 import MotionBackground from "./screens/MotionBackground";
+import TabNavigator from "./navigators/TabNavigator";
 
 export default function App() {
   const [ImageLoaded, setImageLoaded] = useState(false);
 
   setTimeout(() => {
     setImageLoaded(true);
-  }, 3000);
+  }, 2200);
   const [fontsLoaded] = useFonts({
     900: require("./assets/fonts/Noto-Sans/NotoSans-Black.ttf"),
     800: require("./assets/fonts/Noto-Sans/NotoSans-ExtraBold.ttf"),
@@ -27,14 +28,7 @@ export default function App() {
     return <Splash />;
   }
 
-  return (
-    <View style={styles.container}>
-      <MotionBackground>
-        <Text>Open up App.js to start working on your app!</Text>
-      </MotionBackground>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <TabNavigator />;
 }
 
 const styles = StyleSheet.create({
